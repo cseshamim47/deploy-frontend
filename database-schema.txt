@@ -1,0 +1,74 @@
+offers table
+admin : 
+-> add offers (button)
+   ->title
+   ->description
+   ->image
+   ->coupon
+
+user:
+
+
+general: 
+# bike table 
+   -> bike_name
+   -> bike_image
+   -> type (automatic / manual) 
+   -> seat
+   -> oil
+   -> available_at (can be available multiple location)
+   -> day_price
+   -> seven_day_price
+   -> fifteen_day_price
+   -> monthly_price
+   -> limit
+   -> extra
+   -> fuel
+   -> deposit
+   -> make_year
+
+
+CREATE TABLE bike (
+    bike_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for the bike model
+    bike_name VARCHAR(100) NOT NULL,        -- Name of the bike
+    bike_image VARCHAR(255),                -- URL or path to the bike's image
+    type ENUM('automatic', 'manual') NOT NULL, -- Bike type (automatic/manual)
+    seat INT NOT NULL,                      -- Number of seats
+    oil VARCHAR(50),                        -- Oil type (e.g., Petrol, Diesel)
+    day_price DECIMAL(10, 2) NOT NULL,      -- Price for one day
+    hour_price DECIMAL(10, 2),              -- Price for one hour
+    week_price DECIMAL(10, 2),              -- Weekly rental price
+    month_price DECIMAL(10, 2),             -- Monthly rental price
+    fuel VARCHAR(50),                       -- Fuel type (e.g., Full tank, Half tank)
+    deposit DECIMAL(10, 2),                 -- Deposit amount
+    make_year YEAR,                         -- Manufacturing year of the bike
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+
+CREATE TABLE bike_unit (
+    unit_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for a specific bike unit
+    bike_id INT NOT NULL,                   -- Reference to the bike model
+    location_id INT NOT NULL,               -- Location where the bike is available
+    availability_status ENUM('available', 'maintenance') DEFAULT 'available', -- Bike's current status
+    FOREIGN KEY (bike_id) REFERENCES bike(bike_id) ON DELETE CASCADE,
+    FOREIGN KEY (location_id) REFERENCES location(location_id) ON DELETE CASCADE
+);
+
+CREATE TABLE location (
+    location_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each location
+    location_name VARCHAR(100) NOT NULL,        -- Name of the location
+    address VARCHAR(255)                        -- Address of the location
+);
+
+CREATE TABLE bike_booking (
+    booking_id INT AUTO_INCREMENT PRIMARY KEY, -- Unique identifier for each booking
+    unit_id INT NOT NULL,                      -- Reference to the bike unit
+    user_id INT NOT NULL,                      -- User who booked the bike
+    start_time DATETIME NOT NULL,              -- Rental start time
+    end_time DATETIME NOT NULL,                -- Rental end time
+    status ENUM('active', 'completed', 'cancelled') DEFAULT 'active', -- Booking status
+    FOREIGN KEY (unit_id) REFERENCES bike_unit(unit_id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE
+);
+

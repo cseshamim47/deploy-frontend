@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: 172 100% 95%;
+    --foreground: 172 5% 0%;
+    --card: 172 50% 90%;
+    --card-foreground: 172 5% 10%;
+    --popover: 172 100% 95%;
+    --popover-foreground: 172 100% 0%;
+    --primary: 172 72% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 172 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 134 30% 85%;
+    --muted-foreground: 172 5% 35%;
+    --accent: 134 30% 80%;
+    --accent-foreground: 172 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 172 5% 90%;
+    --border: 172 30% 50%;
+    --input: 172 30% 18%;
+    --ring: 172 72% 44%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --custom-green: #B9FF66;
+    --background: 172 50% 5%;
+    --foreground: 172 5% 90%;
+    --card: 172 50% 0%;
+    --card-foreground: 172 5% 90%;
+    --popover: 172 50% 5%;
+    --popover-foreground: 172 5% 90%;
+    --primary: 172 72% 44%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 172 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 134 30% 15%;
+    --muted-foreground: 172 5% 60%;
+    --accent: 134 30% 15%;
+    --accent-foreground: 172 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 172 5% 90%;
+    --border: 172 30% 18%;
+    --input: 172 30% 18%;
+    --ring: 172 72% 44%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  /* Customize scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-muted;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/80;
+  }
+}
+
+.custom-today {
+  font-weight: bold; /* Ensures text is bold */
+  background-color: transparent !important; /* Removes default background */
+  color: inherit; /* Keeps text color as is */
+}
+

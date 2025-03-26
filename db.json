@@ -1,0 +1,73 @@
+{
+  "posts": [
+    { "id": 1, "title": "Hello World", "author": "John Doe" },
+    { "id": 2, "title": "JSON Server is awesome", "author": "Jane Smith" }
+  ],
+  "offers": [
+    {
+      "id": 1,
+      "title": "Get Flat Rs. 50 OFF",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "GOBIKES50"
+    },
+    {
+      "id": 2,
+      "title": "Get Flat Rs. 50 OFF",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "GOBIKES50"
+    },
+    {
+      "id": 3,
+      "title": "Changed the title",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "BEST50"
+    },
+    {
+      "id": 4,
+      "title": "Best One",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "Shamim40"
+    },
+    {
+      "id": 5,
+      "title": "Best One",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "Shamim40"
+    },
+    {
+      "id": 6,
+      "title": "Best One",
+      "description": "Get Flat Rs. 50 off on orders above Rs. 1,000",
+      "image": "bike-3.webp",
+      "coupon": "Shamim40"
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "title": "Self Drive Bike Rentals & Car Rentals",
+      "description": "Backpacker or Solo-traveler? Rent out a bike to see your travel destination closely!",
+      "image": "bike-3.webp",
+      "coupon": "GOBIKES50"
+    },
+    {
+      "id": 2,
+      "title": "Taxi Services with Driver",
+      "description": "If you wish to sit back and relax on your trip, then our Chauffeur Driven Taxi Services are a befitting option for you.",
+      "image": "bike-3.webp",
+      "coupon": "GOBIKES50"
+    },
+    {
+      "id": 3,
+      "title": "Mini Van & Buse Rentals",
+      "description": "Your family vacation will feel complete with EGT's Mini Van & Buses driven by professional Chauffeurs.",
+      "image": "bike-3.webp",
+      "coupon": "BEST50"
+    }
+  ]
+}
