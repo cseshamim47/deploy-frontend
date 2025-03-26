@@ -15,7 +15,7 @@ import useSWR from "swr";
 import { useAuth } from "@/context/AuthContext";
 
 interface LoginModalProps {
-   isOpen: boolean;
+   isOpen?: boolean;
    onClose: () => void;
 }
 
